@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useMemo, useState, type CSSProperties, type FormEvent } from 'react';
+import Link from 'next/link';
 import {
   Check, Headphones,
   RefreshCw, Search, ShieldCheck, ShoppingBag, Truck, X,
@@ -10,6 +11,8 @@ import type { StoreProduct } from '@/lib/business-koro';
 type CartLine = { product: StoreProduct; variant: string; price: number; key: string };
 type ApiError = { error?: string; cloudflareBlocked?: boolean; ownerActionRequired?: boolean; rayId?: string };
 type DeliveryLocation = 'inside' | 'outside';
+
+const CART_STORAGE_KEY = 'ajzio-cart-v1';
 
 const money = (value: number) => `৳${Number(value || 0).toLocaleString('en-BD', { maximumFractionDigits: 0 })}`;
 
@@ -42,6 +45,7 @@ export default function StorefrontPage() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [cart, setCart] = useState<CartLine[]>([]);
+  const [cartReady, setCartReady] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [checkoutOpen, setCheckoutOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<CartLine | null>(null);
@@ -86,6 +90,38 @@ export default function StorefrontPage() {
   }, []);
 
   useEffect(() => { void loadProducts(); }, [loadProducts]);
+
+  // Keep the setup/cart available when a customer moves between product pages.
+  useEffect(() => {
+    try {
+      const saved = window.localStorage.getItem(CART_STORAGE_KEY);
+      if (saved) {
+        const parsed: unknown = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          setCart(parsed.filter((line): line is CartLine => Boolean(
+            line && typeof line === 'object' &&
+            (line as CartLine).product && (line as CartLine).product.id &&
+            typeof (line as CartLine).price === 'number' &&
+            typeof (line as CartLine).key === 'string'
+          )));
+        }
+      }
+    } catch {
+      window.localStorage.removeItem(CART_STORAGE_KEY);
+    }
+    setCartReady(true);
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('showCart') === '1') {
+      setDrawerOpen(true);
+      window.history.replaceState({}, '', `${window.location.pathname}${window.location.hash}`);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!cartReady) return;
+    try { window.localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart)); } catch { /* Storage may be unavailable; cart still works for this page view. */ }
+  }, [cart, cartReady]);
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -256,14 +292,16 @@ export default function StorefrontPage() {
               const image = product.images?.[0];
               return (
                 <article className="product-card" key={product.id} style={{ '--delay': `${Math.min(index * 65, 390)}ms` } as CSSProperties}>
-                  <div className="product-visual">
+                  <Link href={`/product/${encodeURIComponent(product.id)}`} className="product-visual product-visual-link" aria-label={`View ${product.name} details`}>
                     {image ? <img src={image} alt={product.name} loading="lazy" onError={(event) => { event.currentTarget.style.display = 'none'; }} /> : <span className="product-fallback">A</span>}
                     <span className={`stock-pill ${soldOut ? 'out' : ''}`}>{soldOut ? 'SOLD OUT' : 'IN STOCK'}</span>
-                  </div>
+                    <span className="visual-view-label">VIEW DETAILS ↗</span>
+                  </Link>
                   <div className="product-info">
                     <span className="product-category">{productCategory(product)}</span>
-                    <h3>{product.name}</h3>
+                    <h3><Link href={`/product/${encodeURIComponent(product.id)}`} className="product-title-link">{product.name}</Link></h3>
                     <p className="product-description">{product.description || 'A useful pick for your everyday setup.'}</p>
+                    <Link href={`/product/${encodeURIComponent(product.id)}`} className="product-detail-link">Explore product <span>↗</span></Link>
                     {variants.length > 0 && <select className="variant-select" aria-label={`Choose option for ${product.name}`} value={selectedVariant} onChange={(event) => setSelectedVariants((current) => ({ ...current, [product.id]: event.target.value }))}>{variants.map((variant, i) => { const label = variantLabel(variant) || `Option ${i + 1}`; return <option key={`${product.id}-${i}`} value={label}>{label}</option>; })}</select>}
                     <div className="product-bottom"><strong className="product-price">{money(Number(product.suggestedPrice || 0))}</strong><button className="add-button" type="button" disabled={Boolean(soldOut)} onClick={() => addToCart(product)}>{soldOut ? 'Unavailable' : 'Add to setup +'}</button></div>
                   </div>
