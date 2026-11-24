@@ -1,5 +1,22 @@
-node_modules
-.next
-out
-.env*
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# Next.js
+/.next/
+/out/
+/build/
+
+# local env files - never commit API credentials
+.env
+.env.*
 !.env.example
+!.env.local.example
+
+# logs and OS files
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+.DS_Store
+*.pem

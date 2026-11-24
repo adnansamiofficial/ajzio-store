@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330 72" role="img" aria-labelledby="title desc">
+  <title id="title">AJZIO Store</title>
+  <desc id="desc">AJZIO wordmark with a minimal sage-green A symbol</desc>
+  <g transform="translate(7 8)">
+    <rect x="0.75" y="0.75" width="55.5" height="55.5" rx="13" fill="#222B24" stroke="#53644F" stroke-width="1.5"/>
+    <path d="M14.5 43.5 28.4 14.5 42.3 43.5" fill="none" stroke="#B4C49A" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M20.1 32.4h16.6" fill="none" stroke="#B4C49A" stroke-width="3.8" stroke-linecap="round"/>
+    <circle cx="44.7" cy="15.7" r="3.2" fill="#879A6E"/>
+  </g>
+  <text x="79" y="43" fill="#E5E4D9" font-family="Manrope, Arial, sans-serif" font-size="33" font-weight="800" letter-spacing="5.2">AJZIO</text>
+  <text x="81" y="59" fill="#9BA894" font-family="DM Sans, Arial, sans-serif" font-size="8.5" font-weight="700" letter-spacing="4.4">STORE</text>
+</svg>

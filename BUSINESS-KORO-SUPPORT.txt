@@ -1,0 +1,14 @@
+Subject: Storefront API request blocked by Cloudflare Error 1010
+
+Hello Business Koro Support,
+
+I am integrating the Storefront API into my AJZIO Store Next.js application using a server-side request. The API returns HTTP 403 with Cloudflare Error 1010 (browser_signature_banned).
+
+Integration User-Agent: AJZIO-Store/1.0 (server-side storefront)
+Previous Cloudflare Ray ID: a5f874f929c47356
+
+Please review and allow the AJZIO server-side Storefront API integration. I plan to host the application on Vercel; please confirm whether requests from Vercel serverless functions are supported and whether you require a domain setting, IP allowlisting, or another integration identifier.
+
+I will not retry repeatedly while access is blocked.
+
+Thank you.
