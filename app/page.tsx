@@ -112,7 +112,24 @@ export default function StorefrontPage() {
     setCartReady(true);
 
     const params = new URLSearchParams(window.location.search);
-    if (params.get('showCart') === '1') {
+    if (params.get('checkout') === '1') {
+      try {
+        const saved = window.localStorage.getItem(CART_STORAGE_KEY);
+        const parsed: unknown = saved ? JSON.parse(saved) : [];
+        const lines = Array.isArray(parsed) ? parsed as CartLine[] : [];
+        const checkoutLine = lines.find((line) => Boolean(line?.product?.id && typeof line.price === 'number' && line.key));
+        if (checkoutLine) {
+          setCart([checkoutLine]);
+          setSelectedProduct(checkoutLine);
+          setCheckoutOpen(true);
+        } else {
+          setDrawerOpen(true);
+        }
+      } catch {
+        setDrawerOpen(true);
+      }
+      window.history.replaceState({}, '', `${window.location.pathname}${window.location.hash}`);
+    } else if (params.get('showCart') === '1') {
       setDrawerOpen(true);
       window.history.replaceState({}, '', `${window.location.pathname}${window.location.hash}`);
     }
