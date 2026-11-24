@@ -1,0 +1,8 @@
+ "use client";
+import { useState } from "react";
+import Link from "next/link";
+export default function Track(){
+ const [id,setId]=useState(""),[data,setData]=useState<any>(null),[error,setError]=useState(""),[busy,setBusy]=useState(false);
+ async function lookup(e:React.FormEvent){e.preventDefault();setBusy(true);setError("");setData(null);try{const r=await fetch(`/api/orders/${encodeURIComponent(id.trim())}`);const d=await r.json();if(!r.ok)throw new Error(d.error||"Order not found");setData(d)}catch(e){setError(e instanceof Error?e.message:"Could not retrieve order")}finally{setBusy(false)}}
+ return <><div className="announcement">AJZIO STORE · ORDER CARE</div><nav className="nav"><Link href="/" style={{color:"inherit",textDecoration:"none"}}><div className="brand">AJZIO<small>THE ART OF EVERYDAY</small></div></Link><Link href="/" className="cartbtn">Back to store</Link></nav><main className="track"><div className="eyebrow">A little update</div><h1 className="serif">Track your order</h1><p className="muted">Enter the order ID from your Business Koro confirmation.</p><form onSubmit={lookup}><input required value={id} onChange={e=>setId(e.target.value)} placeholder="Your order ID"/><button className="submit" style={{marginTop:12}} disabled={busy}>{busy?"Checking…":"Find my order"}</button></form>{error&&<div className="error" style={{marginTop:15}}>{error}</div>}{data&&<pre style={{whiteSpace:"pre-wrap",background:"#f7f5f0",padding:18,fontSize:12,overflowX:"auto"}}>{JSON.stringify(data,null,2)}</pre>}</main></>;
+}
