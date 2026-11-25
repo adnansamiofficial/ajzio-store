@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AJZIO Store | Curated Technology</title>
+<meta name="description" content="Discover carefully selected gadgets and everyday technology at AJZIO Store.">
+<link rel="icon" type="image/png" href="/logo/ajzio-on-dark-icon.png">
+<style>
+:root{--bg:#0d0716;--em2:#2a1250;--em:#6d3fd1;--gold:#f2a98b;--gold2:#ffd1b8;--gd:#b8694d;--ar:242,169,139;--ar2:255,209,184;--er:109,63,209;--tr:214,66,140;--dr:20,8,40;--ink:#1b0b33;--t3a:#1e3a8a;--t3b:#0b1236;--t4a:#9d2b6b;--t4b:#3a0a2a;--sel:#1a1030;--drw:rgba(18,10,32,.96);--navbg:rgba(13,7,22,.7);--g3:#c4b5fd;--cream:#f6f3ee;--mut:#93a89d;--line:rgba(var(--ar),.18);--glass:rgba(255,255,255,.055);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--cream);font-family:system-ui,-apple-system,'Segoe UI',sans-serif;overflow-x:hidden;position:relative}
+body:before{content:"";position:fixed;inset:0;z-index:-1;background:radial-gradient(600px 500px at 8% 10%,rgba(var(--er),.35),transparent 70%),radial-gradient(560px 480px at 92% 25%,rgba(var(--ar),.2),transparent 70%),radial-gradient(700px 600px at 50% 95%,rgba(var(--tr),.28),transparent 70%);animation:aur 18s ease-in-out infinite alternate}
+@keyframes aur{to{transform:scale(1.15) translate(20px,-20px)}}
+.serif{font-family:Georgia,'Times New Roman',serif}
+.gt{background:linear-gradient(100deg,var(--gold2),var(--gold) 40%,var(--g3));-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+.top{background:linear-gradient(90deg,var(--em2),var(--em),var(--em2));color:var(--gold2);overflow:hidden;white-space:nowrap;font-size:12px;letter-spacing:.2em;padding:8px 0}
+.top span{display:inline-block;animation:mq 30s linear infinite}@keyframes mq{to{transform:translateX(-50%)}}
+nav{position:sticky;top:0;z-index:20;display:flex;align-items:center;gap:22px;padding:10px 5vw;background:var(--navbg);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.logo{display:block;aspect-ratio:581 / 192;background:linear-gradient(90deg,var(--gold) 0 28.5%,var(--cream) 28.5% 100%);-webkit-mask:var(--lg) center/contain no-repeat;mask:var(--lg) center/contain no-repeat}nav .lg{height:42px}.sw{display:flex;gap:7px}.sw button{width:18px;height:18px;border-radius:50%;border:2px solid rgba(255,255,255,.3);cursor:pointer;background:var(--c);transition:.3s;padding:0}.sw button:hover{transform:scale(1.2)}.sw button.on{border-color:#fff;transform:scale(1.2)}
+nav a{color:var(--cream);opacity:.8;text-decoration:none;font-size:14px;position:relative;transition:.3s}nav a:hover{opacity:1;color:var(--gold2)}
+.sp{flex:1}
+.search{background:var(--glass);border:1px solid var(--line);color:var(--cream);padding:10px 18px;border-radius:30px;width:min(260px,34vw);outline:0;transition:.3s;font:inherit;font-size:14px}
+.search::placeholder{color:var(--mut)}.search:focus{border-color:var(--gold);box-shadow:0 0 0 4px rgba(var(--ar),.12)}
+.cartbtn{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--ink);border:0;padding:10px 20px;border-radius:30px;font-weight:700;cursor:pointer;transition:.3s;font:inherit;font-size:14px;font-weight:700}
+.cartbtn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(var(--ar),.35)}
+#cnt{background:var(--em2);color:var(--gold2);border-radius:20px;padding:1px 8px;margin-left:8px;font-size:12px;display:inline-block}
+#cnt.pop{animation:pop .4s}@keyframes pop{50%{transform:scale(1.5)}}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:44px 5vw 56px}
+.pill{display:inline-flex;gap:8px;align-items:center;background:var(--glass);border:1px solid var(--line);color:var(--gold2);padding:7px 16px;border-radius:30px;font-size:12px;letter-spacing:.14em;animation:up .8s both}
+.pill:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--g3);box-shadow:0 0 12px var(--g3);animation:bl 1.6s infinite}@keyframes bl{50%{opacity:.3}}
+h1{font-size:clamp(40px,6.4vw,82px);font-weight:400;line-height:1.03;margin:18px 0;animation:up .8s .1s both}
+.hero p{color:var(--mut);line-height:1.75;max-width:470px;animation:up .8s .2s both}
+.btns{display:flex;gap:12px;margin:26px 0;flex-wrap:wrap;animation:up .8s .3s both}
+.b1,.b2{padding:15px 32px;border-radius:40px;text-decoration:none;font-weight:700;font-size:14px;transition:.3s}
+.b1{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--ink);box-shadow:0 10px 30px rgba(var(--ar),.25)}.b1:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(var(--ar),.4)}
+.b2{border:1px solid var(--line);color:var(--cream);background:var(--glass)}.b2:hover{border-color:var(--gold);color:var(--gold2)}
+.stats{display:flex;gap:34px;animation:up .8s .4s both}.stats b{display:block;font-size:30px;font-family:Georgia,serif;font-weight:400;color:var(--gold2)}.stats span{font-size:12px;color:var(--mut)}
+@keyframes up{from{opacity:0;transform:translateY(26px)}}
+.art{position:relative;height:400px;border-radius:32px;background:linear-gradient(145deg,rgba(var(--er),.55),rgba(var(--dr),.9) 60%,rgba(var(--ar),.25));border:1px solid var(--line);overflow:hidden;display:grid;place-items:center;animation:up 1s .2s both;box-shadow:0 30px 80px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.12)}
+.orb{position:absolute;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle at 30% 30%,var(--gold2),var(--gold) 40%,transparent 70%);filter:blur(30px);opacity:.5;animation:fl 7s ease-in-out infinite}
+.ring{position:absolute;border:1px solid rgba(var(--ar2),.35);border-radius:50%;animation:sp 20s linear infinite}
+.r1{width:300px;height:300px}.r2{width:210px;height:210px;animation-direction:reverse;border-style:dashed}.r3{width:430px;height:430px;animation-duration:34s}
+@keyframes sp{to{transform:rotate(360deg)}}
+.art .lg{height:86px;position:relative;filter:drop-shadow(0 10px 30px rgba(0,0,0,.5))}
+.chip{position:absolute;background:rgba(255,255,255,.1);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.2);color:#fff;padding:10px 16px;border-radius:14px;font-size:13px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.3);animation:fl 5s ease-in-out infinite}
+.c1{top:34px;left:26px}.c2{bottom:44px;right:24px;animation-delay:-2s}.c3{bottom:110px;left:18px;animation-delay:-3.5s}
+@keyframes fl{50%{transform:translateY(-12px)}}
+section{padding:40px 5vw 60px}
+.head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;margin-bottom:28px}
+h2{font-size:clamp(28px,3.6vw,44px);font-weight:400}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.chipb{background:var(--glass);border:1px solid var(--line);color:var(--cream);padding:9px 20px;border-radius:30px;cursor:pointer;transition:.25s;font:inherit;font-size:13px}
+.chipb:hover{border-color:var(--gold)}.chipb.on{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--ink);border-color:transparent;font-weight:700}
+select{border:1px solid var(--line);background:var(--sel);color:var(--cream);padding:9px 14px;border-radius:30px;font:inherit;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:22px}
+.card{position:relative;background:var(--glass);border:1px solid var(--line);border-radius:22px;overflow:hidden;opacity:0;transform:translateY(40px);transition:box-shadow .3s,border-color .3s,transform .2s;backdrop-filter:blur(8px)}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(300px circle at var(--mx,50%) var(--my,0%),rgba(var(--ar),.16),transparent 60%);opacity:0;transition:.3s;z-index:2;pointer-events:none}
+.card:hover:before{opacity:1}
+.card.in{opacity:1;transform:none;transition:opacity .7s,transform .7s,box-shadow .3s,border-color .3s}
+.card:hover{box-shadow:0 24px 50px rgba(0,0,0,.45),0 0 0 1px rgba(var(--ar),.4);border-color:transparent}
+.pic{height:215px;margin:10px;border-radius:16px;display:grid;place-items:center;font-size:76px;font-family:Georgia,serif;color:rgba(255,255,255,.9);position:relative;overflow:hidden;text-shadow:0 6px 24px rgba(0,0,0,.3)}
+.pic img{width:100%;height:100%;object-fit:cover;transition:.6s}.card:hover .pic img{transform:scale(1.08)}
+.pic:after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 40%,rgba(255,255,255,.35) 50%,transparent 60%);transform:translateX(-100%);transition:.9s}.card:hover .pic:after{transform:translateX(100%)}
+.badge{position:absolute;top:12px;left:12px;background:rgba(0,0,0,.45);backdrop-filter:blur(8px);color:var(--gold2);font-size:11px;font-weight:700;padding:4px 11px;border-radius:20px;z-index:1;letter-spacing:.1em}
+.info{padding:8px 18px 18px}.cat{font-size:11px;letter-spacing:.16em;color:var(--gold);text-transform:uppercase}
+.info h3{font-weight:500;font-size:16px;margin:6px 0 4px}.info h3:after{content:"★★★★★";display:block;font-size:11px;letter-spacing:2px;color:var(--gold);margin:6px 0 12px}
+.row{display:flex;justify-content:space-between;align-items:center}
+.price{font-size:20px;font-weight:700;color:var(--gold2)}
+.add{background:var(--glass);color:var(--gold2);border:1px solid var(--line);width:42px;height:42px;border-radius:50%;font-size:22px;cursor:pointer;transition:.3s}
+.add:hover{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--ink);transform:rotate(90deg) scale(1.1);border-color:transparent}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:150px;gap:18px}
+.bt{border-radius:24px;padding:26px;border:1px solid var(--line);position:relative;overflow:hidden;transition:.4s;display:flex;flex-direction:column;justify-content:flex-end;background:var(--glass)}
+.bt:hover{transform:translateY(-6px);border-color:var(--gold)}
+.bt b{font-family:Georgia,serif;font-size:34px;font-weight:400;position:absolute;top:18px;right:24px;color:rgba(255,255,255,.25)}
+.bt h4{font-size:19px;margin-bottom:4px}.bt span{font-size:13px;color:rgba(255,255,255,.7)}
+.t1{grid-column:span 2;grid-row:span 2;background:linear-gradient(150deg,var(--em),var(--em2))}
+.t2{grid-column:span 2;background:linear-gradient(135deg,var(--gd),var(--gold));color:var(--ink)}.t2 span{color:rgba(10,42,31,.75)}.t2 b{color:rgba(10,42,31,.3)}
+.t3{background:linear-gradient(135deg,var(--t3a),var(--t3b))}.t4{background:linear-gradient(135deg,var(--t4a),var(--t4b))}
+.t1 h4{font-size:30px;font-family:Georgia,serif;font-weight:400}
+.rev{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.rc{background:var(--glass);border:1px solid var(--line);border-radius:22px;padding:26px;transition:.3s}.rc:hover{transform:translateY(-5px);border-color:var(--gold)}
+.rc p{line-height:1.7;color:#d6e0da;font-size:15px}.rc div{margin-top:16px;color:var(--gold2);font-size:13px}.rc i{color:var(--gold);font-style:normal;letter-spacing:2px;display:block;margin-bottom:10px}
+.news{margin:0 5vw 60px;background:linear-gradient(120deg,var(--em),var(--em2) 50%,var(--gd));border:1px solid var(--line);border-radius:30px;padding:54px 6vw;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.news:before{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border:1px solid rgba(var(--ar2),.4);border-radius:50%;animation:sp 25s linear infinite}
+.news p{color:#c5d8cd;margin-top:6px}.nf{display:flex;gap:8px;position:relative}
+.nf input{padding:15px 22px;border-radius:30px;border:0;width:min(280px,60vw);font:inherit;outline:0}
+.nf button{background:var(--gold2);color:var(--ink);border:0;padding:15px 28px;border-radius:30px;font-weight:700;cursor:pointer;transition:.3s}.nf button:hover{background:#fff}
+footer{background:rgba(0,0,0,.35);border-top:1px solid var(--line);color:var(--mut);padding:46px 5vw 28px}
+.fg{display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;margin-bottom:30px}
+footer .lg{height:62px;margin-bottom:12px}footer small{display:block;max-width:260px;line-height:1.6}
+footer h5{color:var(--gold2);margin-bottom:10px;letter-spacing:.14em;font-size:12px}footer a{display:block;color:var(--mut);text-decoration:none;margin:6px 0;font-size:14px;transition:.2s}footer a:hover{color:#fff;padding-left:6px}
+.cp{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;font-size:12px;text-align:center}
+.rv{opacity:0;transform:translateY(36px);transition:.9s}.rv.in{opacity:1;transform:none}
+#ov{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:.3s;z-index:30}
+#dr{position:fixed;top:0;right:0;bottom:0;width:min(400px,100vw);background:var(--drw);backdrop-filter:blur(20px);border-left:1px solid var(--line);transform:translateX(100%);transition:.45s cubic-bezier(.7,0,.2,1);z-index:31;display:flex;flex-direction:column;padding:24px}
+.open #ov{opacity:1;pointer-events:auto}.open #dr{transform:none}
+#items{flex:1;overflow:auto;margin:16px 0}
+.it{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}.it .t{flex:1;font-size:14px}.it small{color:var(--mut)}
+.q{display:flex;gap:8px;align-items:center}.q button{background:var(--glass);color:var(--cream);border:1px solid var(--line);width:26px;height:26px;border-radius:50%;cursor:pointer}
+#cl{background:none;border:0;font-size:28px;cursor:pointer;color:var(--cream)}
+.co{background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--ink);border:0;padding:15px;border-radius:30px;font-weight:700;cursor:pointer;width:100%;margin-top:14px;font:inherit;font-weight:700;transition:.3s}.co:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(var(--ar),.3)}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:var(--gold2);color:var(--ink);padding:12px 24px;border-radius:30px;transition:.4s;z-index:40;font-size:14px;font-weight:600}#toast.s{transform:translate(-50%,0)}
+@media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:28px}.art{height:300px}nav a,.search{display:none}nav .lg{height:36px}.bento{grid-template-columns:1fr 1fr}.t1,.t2{grid-column:span 2}}
+
+.lg{display:block}nav .lg{height:42px}footer .lg{height:62px;margin-bottom:12px}
+[hidden]{display:none!important}
+.card{cursor:pointer}.card.sk{cursor:default}
+.sk .pic,.sk .l1,.sk .l2{background:linear-gradient(100deg,rgba(255,255,255,.04) 30%,rgba(255,255,255,.12) 50%,rgba(255,255,255,.04) 70%);background-size:200% 100%;animation:shm 1.4s infinite}
+.sk .l1{height:14px;border-radius:8px;width:60%;margin:8px 0 14px}.sk .l2{height:14px;border-radius:8px;width:35%}
+@keyframes shm{to{background-position:-200% 0}}
+.empty{grid-column:1/-1;text-align:center;color:var(--mut);padding:60px 10px;line-height:1.7}
+.md{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:35;display:grid;place-items:center;padding:16px}
+.mb{position:relative;background:var(--drw);border:1px solid var(--line);border-radius:26px;width:min(480px,100%);max-height:92vh;overflow:auto;animation:up .35s both}
+.mb #mx{position:absolute;top:10px;right:14px;z-index:3;background:rgba(0,0,0,.45);border:0;color:#fff;width:36px;height:36px;border-radius:50%;font-size:22px;cursor:pointer}
+.pic.big{height:300px;margin:12px;font-size:100px}.desc{color:#cdd6d1;line-height:1.7;font-size:14px;margin-top:10px}
+#dr .vw{display:flex;flex-direction:column;flex:1;min-height:0}#dr .vw[hidden]{display:none}
+.fld{display:grid;gap:12px;overflow:auto;margin-top:14px}.fld label{display:grid;gap:6px;font-size:13px;color:var(--mut)}
+.fld input,.fld textarea{background:var(--glass);border:1px solid var(--line);color:var(--cream);padding:12px 14px;border-radius:14px;font:inherit;outline:0;resize:none}.fld input:focus,.fld textarea:focus{border-color:var(--gold)}
+.err{color:#ff9aa5;font-size:13px;min-height:18px;margin-top:8px}
+.co:disabled{opacity:.5;cursor:not-allowed;transform:none;box-shadow:none}
+.co.ghost{background:none;border:1px solid var(--line);color:var(--cream);margin-top:8px}.co.ghost:hover{border-color:var(--gold);box-shadow:none}
+.done{margin:auto;text-align:center}.tick{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--ink);font-size:36px;display:grid;place-items:center;margin:0 auto 18px;animation:pop .6s}
+.done h3{font-size:28px;font-weight:400}.done p{color:var(--mut);line-height:1.8;margin:10px 0 20px}.done b{color:var(--gold2)}
+
+.fld select{background:var(--sel);border:1px solid var(--line);color:var(--cream);padding:12px 14px;border-radius:14px;font:inherit;outline:0;width:100%}
+.fld select:focus{border-color:var(--gold)}
+.delivery-toggle{display:flex!important;grid-template-columns:auto 1fr;align-items:center;gap:10px!important;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:var(--glass);color:var(--cream)!important}
+.delivery-toggle input{width:18px;height:18px;accent-color:var(--gold);padding:0}
+.delivery-note{color:var(--mut);font-size:12px;line-height:1.5;margin-top:6px}
+.it .remove{background:none;border:1px solid var(--line);color:var(--mut);border-radius:50%;width:28px;height:28px;cursor:pointer}
+.stock-note{font-size:11px;color:var(--mut);margin-top:8px}
+.modal-variant{display:grid;gap:6px;margin-top:12px;color:var(--mut);font-size:13px}
+.modal-variant select{width:100%;padding:12px 14px;border-radius:12px}
+.product-out{opacity:.55;filter:grayscale(.35)}
+@media(max-width:560px){.fld{gap:10px}.mb{max-height:94vh}.pic.big{height:230px}}
+
+</style></head><body>
+<div class="top" id="ann" hidden><span id="annt"></span></div>
+<nav><img class="lg" src="/logo/ajzio-on-dark-96h.png" alt="AJZIO Store"><a href="#shop">Shop</a><a href="#contact">Contact</a><div class="sp"></div>
+<input class="search" id="q" placeholder="Search products…" aria-label="Search"><button class="cartbtn" id="cb">Cart<span id="cnt">0</span></button></nav>
+
+<header class="hero"><div><span class="pill">AJZIO STORE</span>
+<h1 class="serif"><span id="h1a">Quality you can</span><br><span class="gt" id="h1b">feel</span> <span id="h1c">every day</span></h1>
+<p id="ht"></p>
+<div class="btns"><a class="b1" href="#shop">Shop now</a></div></div>
+<div class="art"><div class="orb"></div><div class="ring r3"></div><div class="ring r1"></div><div class="ring r2"></div><img class="lg" src="/logo/ajzio-on-dark-192h.png" alt=""></div></header>
+
+<section id="shop"><div class="head"><h2 class="serif">Our <span class="gt">Collection</span></h2><div class="tools"><div class="tools" id="chips"></div><select id="sort" aria-label="Sort"><option value="">Sort: Featured</option><option value="a">Price: Low to High</option><option value="d">Price: High to Low</option></select></div></div>
+<div class="grid" id="grid"></div></section>
+
+<footer id="contact"><div class="fg"><div><img class="lg" src="/logo/ajzio-on-dark-192h.png" alt="AJZIO"><small>Thank you for shopping with AJZIO Store.</small></div><div id="ct"></div></div><div class="cp">© <span id="yr"></span> AJZIO Store. All rights reserved.</div></footer>
+
+<div id="ov"></div>
+<aside id="dr"><div class="row"><h2 class="serif" style="font-size:28px" id="dt">Your Cart</h2><button id="cl" aria-label="Close">×</button></div>
+<div id="v1" class="vw"><div id="items"></div><div class="row"><span>Total</span><b class="price" id="tot">0</b></div><button class="co" id="co">Checkout</button></div>
+<form id="v2" class="vw" hidden><div class="fld">
+<label>Full name<input name="name" required minlength="2" maxlength="80" autocomplete="name"></label>
+<label>Phone number<input name="phone" required inputmode="tel" maxlength="20" autocomplete="tel" placeholder="017XXXXXXXX"></label>
+<label>Division<input name="division" required maxlength="80" autocomplete="address-level1" placeholder="e.g. Khulna"></label>
+<label>District<input name="district" id="customerDistrict" required maxlength="80" autocomplete="address-level2" placeholder="e.g. Satkhira"></label>
+<label>Area / Thana<input name="area" required maxlength="100" placeholder="e.g. Satkhira Sadar"></label>
+<label>Full delivery address<textarea name="address" required minlength="5" maxlength="600" rows="3" autocomplete="street-address" placeholder="House, road, village and other details"></textarea></label>
+<label class="delivery-toggle"><input name="deliveryPaid" id="deliveryPaid" type="checkbox" checked><span>Customer pays delivery charge at delivery</span></label>
+<div class="delivery-note" id="deliveryInfo">Delivery charge is collected by the courier at delivery.</div>
+<label>Note (optional)<textarea name="note" maxlength="1000" rows="2"></textarea></label>
+</div><div class="row" style="margin-top:14px"><span>Product total</span><b class="price" id="productTotal">0</b></div><div class="row" style="margin-top:8px"><span>Delivery charge</span><b id="deliveryTotal">0</b></div><div class="row" style="margin-top:8px"><span>Estimated total</span><b class="price" id="tot2">0</b></div><div id="err" class="err"></div><button class="co" id="place" type="submit">Place order</button><button class="co ghost" type="button" id="back">Back to cart</button></form>
+<div id="v3" class="vw" hidden><div class="done"><div class="tick">✓</div><h3 class="serif">Order placed!</h3><p>Your Business Koro order reference is <b id="oid"></b>.<br><span id="ostatus">We’ll contact you on your phone to confirm.</span></p><button class="co" id="cont">Continue shopping</button></div></div></aside>
+<div id="md" class="md" hidden><div class="mb"><button id="mx" aria-label="Close">×</button><div id="mc"></div></div></div>
+<div id="toast"></div>
+<script>
+(async()=>{
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const okImg=u=>/^(https?:)?\/\//.test(u)||/^\//.test(u)?u:"";
+let S={currency:"৳",contact:{}},P=[],cart=[],cat="All",term="",srt="",deliveryCharges={insideDhaka:0,outsideDhaka:0};
+const fmt=n=>S.currency+Number(n||0).toLocaleString("en-BD",{maximumFractionDigits:0});
+const tones=[["#6d3fd1","#a78bfa"],["#e0795a","#ffd1b8"],["#1d4ed8","#60a5fa"],["#be185d","#f472b6"],["#0f766e","#5eead4"],["#b45309","#fbbf24"]];
+const tone=id=>{let h=0;for(const c of String(id))h=(h*31+c.charCodeAt(0))%6;return tones[h]};
+function toast(t){const e=$("#toast");e.textContent=t;e.classList.add("s");clearTimeout(toast.t);toast.t=setTimeout(()=>e.classList.remove("s"),2600)}
+function save(){try{localStorage.setItem("ajzio-cart",JSON.stringify(cart.map(c=>({id:c.p.id,variant:c.variant}))))}catch(e){}}
+function restore(){try{const s=JSON.parse(localStorage.getItem("ajzio-cart")||"[]");cart=s.map(x=>{const p=P.find(p=>p.id===String(x.id));if(!p)return null;const v=(p.variants||[]).find(v=>v.inStock!==false&&(v.color||"")===(x.variant?.color||"")&&(v.size||"")===(x.variant?.size||""));return {p,variant:v?{color:v.color||"",size:v.size||""}:null}}).filter(Boolean)}catch(e){cart=[]}}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.1});
+function render(){
+ $("#chips").innerHTML=["All",...new Set(P.map(p=>p.category||"Everyday tech"))].map(c=>`<button class="chipb ${c==cat?"on":""}" data-c="${esc(c)}">${esc(c)}</button>`).join("");
+ let L=P.filter(p=>(cat=="All"||p.category==cat)&&(`${p.name} ${p.description||""} ${p.category||""}`).toLowerCase().includes(term));
+ if(srt)L=[...L].sort((a,b)=>srt=="a"?a.price-b.price:b.price-a.price);
+ $("#grid").innerHTML=L.map((p,i)=>{const t=tone(p.id),im=okImg(p.image||p.images?.[0]),available=p.inStock!==false;return`<div class="card ${available?"":"product-out"}" data-o="${esc(p.id)}" style="transition-delay:${Math.min(i,8)*50}ms"><div class="pic" style="background:linear-gradient(135deg,${t[0]},${t[1]})">${im?`<img src="${esc(im)}" alt="${esc(p.name)}" loading="lazy">`:esc(p.name[0]||"A")}<span class="badge">${available?"AVAILABLE":"SOLD OUT"}</span></div><div class="info"><div class="cat">${esc(p.category||"Everyday tech")}</div><h3>${esc(p.name)}</h3><div class="row"><span class="price">${fmt(p.price)}</span><button class="add" data-id="${esc(p.id)}" aria-label="View product" ${available?"":"disabled"}>${available?"+":"×"}</button></div><div class="stock-note">${available?"View details & options":"Currently unavailable"}</div></div></div>`}).join("")||`<div class="empty">${P.length?"No products match your search.":"No products available yet."}</div>`;
+ document.querySelectorAll(".card").forEach(e=>io.observe(e))}
+function drawCart(){
+ const n=cart.length,el=$("#cnt");el.textContent=n;el.classList.remove("pop");void el.offsetWidth;el.classList.add("pop");
+ const subtotal=cart.reduce((a,c)=>a+c.p.price,0);$("#tot").textContent=fmt(subtotal);$("#co").disabled=!cart.length;$("#co").textContent=cart.length>1?"Checkout one item at a time":"Checkout";
+ $("#items").innerHTML=cart.map((c,i)=>`<div class="it"><div class="t">${esc(c.p.name)}<br><small>${fmt(c.p.price)}${c.variant&&(c.variant.color||c.variant.size)?` · ${esc([c.variant.color,c.variant.size].filter(Boolean).join(" / "))}`:""}</small></div><button class="remove" data-remove="${i}" aria-label="Remove item">×</button></div>`).join("")||`<p style="color:var(--mut)">Your cart is empty.</p>`}
+function add(id,variant){const p=P.find(x=>x.id===String(id));if(!p||p.inStock===false)return toast("This product is not available.");let v=variant||null;const list=(p.variants||[]).filter(x=>x.inStock!==false);if(list.length&&!v)v={color:list[0].color||"",size:list[0].size||""};const key=`${p.id}:${v?.color||""}:${v?.size||""}`;if(cart.some(c=>`${c.p.id}:${c.variant?.color||""}:${c.variant?.size||""}`===key))return toast("This item is already in your cart.");cart.push({p,variant:v});save();drawCart();toast(p.name+" added to cart")}
+function view(v){["v1","v2","v3"].forEach(x=>$("#"+x).hidden=x!=v);$("#dt").textContent=v=="v1"?"Your Cart":v=="v2"?"Checkout":"Thank you"}
+const openCart=()=>{view("v1");document.body.classList.add("open")},closeCart=()=>document.body.classList.remove("open");
+document.addEventListener("click",e=>{const t=e.target;
+ if(t.dataset.c){cat=t.dataset.c;render();return}
+ if(t.dataset.modalAdd){const p=P.find(x=>x.id===t.dataset.modalAdd);const sel=$("#modalVariant");let v=null;if(sel&&p?.variants?.length){const item=p.variants[Number(sel.value)];if(item)v={color:item.color||"",size:item.size||""}}add(t.dataset.modalAdd,v);$("#md").hidden=true;return}
+ if(t.dataset.id){const p=P.find(x=>x.id===t.dataset.id);if(p)openModal(p);return}
+ if(t.dataset.remove!==undefined){const i=Number(t.dataset.remove);if(Number.isInteger(i)){cart.splice(i,1);save();drawCart()}return}
+ if(t.id=="retry"){load(true);return}
+ const cd=t.closest(".card");if(cd){const p=P.find(x=>x.id===cd.dataset.o);if(p)openModal(p)}});
+function openModal(p){const t=tone(p.id),im=okImg(p.image||p.images?.[0]),variants=(p.variants||[]).filter(v=>v.inStock!==false);const opts=variants.map((v,i)=>`<option value="${i}">${esc([v.color,v.size].filter(Boolean).join(" / ")||"Standard option")}</option>`).join("");$("#mc").innerHTML=`<div class="pic big" style="background:linear-gradient(135deg,${t[0]},${t[1]})">${im?`<img src="${esc(im)}" alt="${esc(p.name)}">`:esc(p.name[0]||"A")}</div><div class="info"><div class="cat">${esc(p.category||"Everyday tech")}</div><h3 style="font-size:22px">${esc(p.name)}</h3>${p.description?`<p class="desc">${esc(p.description)}</p>`:""}<div class="row" style="margin-top:16px"><span class="price">${fmt(p.price)}</span><span class="stock-note">${p.inStock===false?"Out of stock":"In stock"}</span></div>${variants.length?`<label class="modal-variant">Choose colour / size<select id="modalVariant">${opts}</select></label>`:""}<button class="b1" data-modal-add="${esc(p.id)}" style="border:0;cursor:pointer;width:100%;margin-top:16px" ${p.inStock===false||!variants.length&&(p.variants||[]).length?"disabled":""}>Add to cart</button></div>`;$("#md").hidden=false}
+$("#mx").onclick=()=>$("#md").hidden=true;$("#md").onclick=e=>{if(e.target.id=="md")$("#md").hidden=true};
+document.addEventListener("keydown",e=>{if(e.key=="Escape"){$("#md").hidden=true;closeCart()}});
+$("#q").oninput=e=>{term=e.target.value.toLowerCase().trim();render()};$("#sort").onchange=e=>{srt=e.target.value;render()};
+$("#cb").onclick=openCart;$("#cl").onclick=$("#ov").onclick=closeCart;
+$("#co").onclick=()=>{if(!cart.length)return;if(cart.length>1){toast("Business Koro accepts one product per order. Please checkout one item at a time.");return}view("v2");refreshCheckoutSummary()};$("#back").onclick=()=>view("v1");$("#cont").onclick=closeCart;
+function getDeliveryFee(){const district=$("#customerDistrict").value.trim().toLowerCase();const inside=["dhaka","ঢাকা"].includes(district);return Number(inside?deliveryCharges.insideDhaka:deliveryCharges.outsideDhaka)||0}
+function refreshCheckoutSummary(){const item=cart[0];const subtotal=item?Number(item.p.price):0;const payer=$("#deliveryPaid").checked;const fee=payer?getDeliveryFee():0;$("#productTotal").textContent=fmt(subtotal);$("#deliveryTotal").textContent=payer?fmt(fee)+" (pay at delivery)":"Paid by AJZIO";$("#tot2").textContent=fmt(subtotal+fee);$("#deliveryInfo").textContent=payer?"Delivery charge is collected by the courier when your parcel arrives.":"AJZIO will cover the delivery charge for this order."}
+$("#customerDistrict").addEventListener("input",refreshCheckoutSummary);$("#deliveryPaid").addEventListener("change",refreshCheckoutSummary);
+$("#v2").onsubmit=async e=>{e.preventDefault();if(cart.length!==1){$("#err").textContent="Please checkout one product at a time.";return}const f=new FormData(e.target),b=$("#place"),line=cart[0];$("#err").textContent="";b.disabled=true;b.textContent="Placing order…";
+ try{const payload={productId:line.p.id,customerName:f.get("name"),customerPhone:f.get("phone"),customerDivision:f.get("division"),customerDistrict:f.get("district"),customerArea:f.get("area"),customerAddress:f.get("address"),sellingPrice:line.p.price,deliveryChargePaidByCustomer:$("#deliveryPaid").checked,customerNote:f.get("note")||"",...(line.variant?.color?{color:line.variant.color}:{}),...(line.variant?.size?{size:line.variant.size}:{})};
+ const r=await fetch("/api/orders",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(payload)});const j=await r.json().catch(()=>({}));if(!r.ok)throw new Error(j.error||"Could not place the order. Please try again.");
+ const id=j.orderId||j.id||"Submitted";$("#oid").textContent=id;$("#ostatus").textContent=j.duplicate?"This matched an existing recent order reference.":j.status==="PENDING_PAYMENT"?"Order received and waiting for supplier payment processing.":"We’ll contact you on your phone to confirm.";cart=[];save();drawCart();e.target.reset();view("v3");
+ }catch(err){$("#err").textContent=err.message}finally{b.disabled=false;b.textContent="Place order";refreshCheckoutSummary()}};
+async function load(force=false){$("#grid").innerHTML=Array(8).fill('<div class="card in sk"><div class="pic"></div><div class="info"><div class="l1"></div><div class="l2"></div></div></div>').join("");
+ try{const r=await fetch(force?"/api/products?refresh=1":"/api/products",{headers:{Accept:"application/json"},cache:"no-store"});const j=await r.json().catch(()=>({}));if(!r.ok){const ex=new Error(j.error||`Product loading failed (HTTP ${r.status}).`);ex.retryable=!(j.cloudflareBlocked||j.supplierStatus===401||j.supplierStatus===403);throw ex}P=Array.isArray(j.data)?j.data:[];deliveryCharges=j.deliveryCharges||{};restore();render();drawCart();if(!P.length)$("#grid").innerHTML='<div class="empty">No products are available right now.</div>';
+ }catch(err){const retry=err.retryable!==false;$("#grid").innerHTML=`<div class="empty">${esc(err.message||"Products could not be loaded.")}<br>${retry?'<button class="chipb" id="retry" style="margin-top:14px">Try again</button>':'<span class="stock-note">This needs a server/API configuration change. Please contact AJZIO support.</span>'}</div>`}}
+$("#yr").textContent=new Date().getFullYear();
+try{S=await(await fetch("/api/config",{cache:"no-store"})).json()}catch(e){}
+if(S.announcement){$("#ann").hidden=false;$("#annt").textContent=(S.announcement+"   ✦   ").repeat(12)}if(S.heroLine1)$("#h1a").textContent=S.heroLine1;if(S.heroAccent)$("#h1b").textContent=S.heroAccent;if(S.heroLine2)$("#h1c").textContent=S.heroLine2;$("#ht").textContent=S.heroText||"";
+const c=S.contact||{},ct=[];if(c.phone)ct.push(`<a href="tel:${esc(c.phone)}">${esc(c.phone)}</a>`);if(c.whatsapp)ct.push(`<a href="https://wa.me/${esc(String(c.whatsapp).replace(/\D/g,""))}" target="_blank" rel="noopener">WhatsApp</a>`);if(c.email)ct.push(`<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>`);if(c.address)ct.push(`<a>${esc(c.address)}</a>`);$("#ct").innerHTML=ct.length?"<h5>CONTACT</h5>"+ct.join(""):"";
+drawCart();await load();
+})();
+</script>
+</body></html>
